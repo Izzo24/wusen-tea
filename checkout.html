@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>結帳｜霧森製茶所</title>
+<meta name="description" content="霧森製茶所結帳：填寫收件與配送資訊，選擇付款方式，完成高山茶品訂購。">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://izzo24.github.io/wusen-tea/checkout.html">
+<meta name="theme-color" content="#2C3E32">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=2">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="霧森製茶所 首頁">
+      <svg class="logo" viewBox="0 0 48 48" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="44" height="44" rx="12" fill="#2C3E32"/><path d="M8 33c4-1 6-5 8-5s3 3 6 3 5-7 8-7 4 5 6 5" fill="none" stroke="#C7A053" stroke-width="1.4" stroke-linecap="round" opacity=".7"/><path d="M9 36l8-13 6 9 4-7 8 11z" fill="#52735C"/><path d="M24 20c3 1 5 4 5 8-3-1-5-4-5-8z" fill="#C7A053"/><path d="M24 20v9" stroke="#E7D4A8" stroke-width="1.1" stroke-linecap="round"/></svg>
+      <span class="wm"><b>霧森製茶所</b><span>Mist Forest</span></span>
+    </a>
+    <nav class="nav" aria-label="主選單">
+      <a href="index.html">首頁</a>
+      <a href="shop.html">茶品選購</a>
+      <a href="product.html">梨山烏龍</a>
+      <a href="story.html">茶山故事</a>
+      <a href="contact.html">沖泡・聯絡</a>
+      <a href="account.html" class="cart" data-account-link aria-label="會員"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+      <a href="cart.html" class="cart" aria-label="購物車"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg><span class="cart-badge" data-cart-count style="display:none">0</span></a>
+    </nav>
+    <button class="burger" aria-label="開啟選單" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-nav" id="mnav" aria-label="行動選單">
+  <a href="index.html">首頁<span class="en">Home</span></a>
+  <a href="shop.html">茶品選購<span class="en">Shop</span></a>
+  <a href="product.html">梨山高山烏龍<span class="en">Signature</span></a>
+  <a href="story.html">茶山故事<span class="en">Story</span></a>
+  <a href="contact.html">沖泡・聯絡<span class="en">Contact</span></a>
+  <a href="cart.html">購物車<span class="en">Cart</span></a>
+  <a href="account.html">會員<span class="en">Account</span></a>
+</nav>
+
+<main>
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="crumb" aria-label="麵包屑" style="margin-bottom:1.4rem">
+      <a href="index.html">首頁</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      <a href="cart.html">購物車</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      <span>結帳</span>
+    </nav>
+    <p class="eyebrow">結帳 · Checkout</p>
+    <h1 class="h-xl">填寫配送與付款</h1>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0" data-checkout-wrap>
+  <div class="wrap">
+    <div class="co-grid">
+      <form data-checkout novalidate>
+        <h3 class="h-md" style="margin-bottom:1.2rem">收件資訊</h3>
+        <div class="field-row">
+          <div class="field"><label>收件人姓名</label><input type="text" name="name" required></div>
+          <div class="field"><label>聯絡電話</label><input type="tel" name="phone" required></div>
+        </div>
+        <div class="field"><label>電子郵件</label><input type="email" name="email" required></div>
+        <div class="field"><label>配送地址</label><input type="text" name="address" placeholder="縣市 / 區 / 路 / 號 / 樓" required></div>
+
+        <h3 class="h-md" style="margin:2rem 0 1.2rem">配送方式</h3>
+        <div class="pay-opts">
+          <label class="pay-opt"><input type="radio" name="shipping" value="home" checked> 宅配到府（1–3 個工作天）</label>
+          <label class="pay-opt"><input type="radio" name="shipping" value="cvs"> 超商取貨</label>
+        </div>
+
+        <h3 class="h-md" style="margin:2rem 0 1.2rem">付款方式</h3>
+        <div class="pay-opts">
+          <label class="pay-opt"><input type="radio" name="payment" value="card" checked> 信用卡 / 行動支付</label>
+          <label class="pay-opt"><input type="radio" name="payment" value="transfer"> ATM 轉帳</label>
+          <label class="pay-opt"><input type="radio" name="payment" value="cod"> 貨到付款</label>
+        </div>
+
+        <div class="field" style="margin-top:1.4rem"><label>訂單備註（選填）</label><textarea name="note" placeholder="例如：指定到貨時段、發票需求"></textarea></div>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:.5rem">確認下單</button>
+        <p style="font-size:.78rem;color:var(--ink-mute);text-align:center;margin-top:.9rem">這是展示用範例結帳，不會實際扣款或寄送。</p>
+      </form>
+
+      <aside class="co-card">
+        <h3>訂單摘要</h3>
+        <div data-checkout-summary></div>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-about">
+        <a class="brand" href="index.html" style="margin-bottom:.4rem"><svg class="logo" viewBox="0 0 48 48" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="44" height="44" rx="12" fill="#22301f"/><path d="M9 36l8-13 6 9 4-7 8 11z" fill="#52735C"/><path d="M24 20c3 1 5 4 5 8-3-1-5-4-5-8z" fill="#C7A053"/></svg><span class="wm"><b style="color:#F4ECDB">霧森製茶所</b><span>Mist Forest</span></span></a>
+        <p>源自台灣高山雲霧帶的手採手焙茶。把一座山的清香，封進日常的一盞茶。</p>
+      </div>
+      <div><h4>選購</h4><a href="shop.html">全部茶品</a><a href="product.html">梨山高山烏龍</a><a href="shop.html">蜜香紅茶</a><a href="shop.html">霧森禮盒</a></div>
+      <div><h4>認識霧森</h4><a href="story.html">茶山故事</a><a href="story.html#craft">製茶工藝</a><a href="contact.html#brew">沖泡指南</a><a href="contact.html">門市資訊</a></div>
+      <div><h4>會員</h4><a href="account.html">會員中心</a><a href="cart.html">購物車</a><a href="contact.html#faq">常見問題</a><a href="contact.html">配送與退換</a></div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span data-year>2026</span> 霧森製茶所 MIST FOREST · 台中市南屯區</span>
+      <span class="credit">網站設計與架設：<a href="https://bridgeseqlab.com" target="_blank" rel="noopener">橋序創研 BridgeSeq Lab</a></span>
+    </div>
+  </div>
+</footer>
+<button class="to-top" aria-label="回到頂端"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+<script src="assets/main.js?v=2"></script>
+</body>
+</html>
