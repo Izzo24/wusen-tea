@@ -67,7 +67,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       <a href="shop.html">茶品選購</a>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      <span>梨山高山烏龍</span>
+      <span data-pd-crumb>梨山高山烏龍</span>
     </nav>
   </div>
 </section>
@@ -76,8 +76,8 @@
   <div class="wrap">
     <div class="pd">
       <div class="gallery" data-reveal>
-        <div class="main"><img src="assets/oolong.webp" alt="梨山高山烏龍茶罐，墨綠霧面金邊，石面背景"></div>
-        <div class="thumbs">
+        <div class="main"><img src="assets/oolong.webp" alt="梨山高山烏龍茶罐，墨綠霧面金邊，石面背景" data-pd-main></div>
+        <div class="thumbs" data-pd-thumbs>
           <button class="active" data-full="assets/oolong.webp" aria-label="商品照"><img src="assets/oolong.webp" alt="茶罐"></button>
           <button data-full="assets/pour.webp" aria-label="茶湯"><img src="assets/pour.webp" alt="茶湯"></button>
           <button data-full="assets/roast.webp" aria-label="焙火"><img src="assets/roast.webp" alt="炭焙"></button>
@@ -85,16 +85,16 @@
         </div>
       </div>
       <div data-reveal>
-        <span class="origin">梨山 · 海拔 2,000m</span>
-        <h1 class="h-lg" style="margin:.3rem 0 .2rem">梨山高山烏龍</h1>
+        <span class="origin" data-pd-origin>梨山 · 海拔 2,000m</span>
+        <h1 class="h-lg" style="margin:.3rem 0 .2rem" data-pd-name>梨山高山烏龍</h1>
         <div class="price"><span>NT$</span><span data-price-out>880</span></div>
-        <p class="lede" style="font-size:1.02rem">梨山是台灣海拔最高的茶區之一，終年雲霧繚繞、日夜溫差大。晨霧未散時手採一心二葉，當日萎凋，再以龍眼木炭慢焙定香。茶湯蜜綠透亮，入口花蜜香清揚，喉韻冷甜、回甘綿長。</p>
-        <div class="flavor" aria-label="風味標籤">
+        <p class="lede" style="font-size:1.02rem" data-pd-desc>梨山是台灣海拔最高的茶區之一，終年雲霧繚繞、日夜溫差大。晨霧未散時手採一心二葉，當日萎凋，再以龍眼木炭慢焙定香。茶湯蜜綠透亮，入口花蜜香清揚，喉韻冷甜、回甘綿長。</p>
+        <div class="flavor" aria-label="風味標籤" data-pd-flavor>
           <span>花蜜香</span><span>冷甜喉韻</span><span>蜜綠湯色</span><span>耐沖泡</span>
         </div>
         <div class="opts">
           <label>規格</label>
-          <div class="chip-row">
+          <div class="chip-row" data-pd-chips>
             <button class="chip" data-price="520">50g 嚐鮮</button>
             <button class="chip active" data-price="880">100g 標準</button>
             <button class="chip" data-price="1,240">150g 珍藏</button>
@@ -191,6 +191,59 @@
   </div>
 </footer>
 <button class="to-top" aria-label="回到頂端"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+<!-- 依 URL ?id 動態填入對應商品（單一 product.html 服務多商品）。需在 main.js 前執行，
+     讓加入購物車時讀到正確商品名。 -->
+<script>
+(function(){
+  var PRODUCTS = {
+    lishan:    { name:"梨山高山烏龍", origin:"梨山 · 海拔 2,000m", img:"assets/oolong.webp",
+      desc:"梨山是台灣海拔最高的茶區之一，終年雲霧繚繞、日夜溫差大。晨霧未散時手採一心二葉，當日萎凋，再以龍眼木炭慢焙定香。茶湯蜜綠透亮，入口花蜜香清揚，喉韻冷甜、回甘綿長。",
+      flavor:["花蜜香","冷甜喉韻","蜜綠湯色","耐沖泡"], specs:[["50g 嚐鮮","520"],["100g 標準","880"],["150g 珍藏","1,240"]] },
+    jinxuan:   { name:"阿里山金萱", origin:"阿里山 · 海拔 1,600m", img:"assets/tin-amber.webp",
+      desc:"阿里山金萱以獨特的天然奶香聞名，花香清雅、口感滑順不澀。海拔與雲霧帶來飽滿的山頭氣，入口溫潤回甘，是初入門也會愛上的高山茶。",
+      flavor:["天然奶香","清雅花香","滑順順口","回甘"], specs:[["50g 嚐鮮","400"],["100g 標準","680"],["150g 珍藏","960"]] },
+    shanlinxi: { name:"杉林溪烏龍", origin:"杉林溪 · 海拔 1,700m", img:"assets/tin-char.webp",
+      desc:"杉林溪高冷茶區雲霧濃厚，茶葉山頭氣明顯。湯色蜜綠透亮，滋味甘潤滑口、層次飽滿，冷熱皆宜，是耐喝又有個性的代表茶款。",
+      flavor:["山頭氣","蜜綠湯色","甘潤滑口","層次飽滿"], specs:[["50g 嚐鮮","440"],["100g 標準","760"],["150g 珍藏","1,080"]] },
+    baozhong:  { name:"文山包種", origin:"坪林 · 文山茶區", img:"assets/tin-pouchong.webp",
+      desc:"文山包種屬輕發酵清香型，花香高揚、滋味清爽不苦澀。坪林雲霧與職人手藝成就這款優雅的日常茶，熱泡冷泡都耐喝。",
+      flavor:["輕發酵","高揚花香","清爽","日常耐喝"], specs:[["50g 嚐鮮","320"],["100g 標準","540"],["150g 珍藏","760"]] },
+    honey:     { name:"蜜香紅茶", origin:"花蓮 · 瑞穗", img:"assets/pour.webp",
+      desc:"小綠葉蟬著涎後自然生成的天然蜜香，是蜜香紅茶最迷人之處。瑞穗的好山好水孕育出溫潤茶體，熱飲圓潤、冷泡清甜，無需加糖也甘美。",
+      flavor:["天然蜜香","溫潤茶體","熱飲圓潤","冷泡清甜"], specs:[["50g 嚐鮮","360"],["100g 標準","620"],["150g 珍藏","880"]] },
+    giftset:   { name:"霧森禮盒・三入組", origin:"職人選 · 送禮首選", img:"assets/set.webp",
+      desc:"高山烏龍、蜜香紅茶、文山包種一次珍藏，三款經典各具風味。質感禮盒搭配手寫卡片，送禮體面、自用也享受，是認識霧森最完整的一份心意。",
+      flavor:["三款經典","質感禮盒","附手寫卡","送禮首選"], specs:[["標準三入","1,680"],["珍藏三入","2,280"]] },
+  };
+  var qs = new URLSearchParams(location.search);
+  var id = qs.get("id");
+  var p = PRODUCTS[id];
+  if(!p) return; // 無 id 或未知 → 維持頁面預設（梨山）
+  var $ = function(s){ return document.querySelector(s); };
+  if($("[data-pd-name]"))   $("[data-pd-name]").textContent = p.name;
+  if($("[data-pd-crumb]"))  $("[data-pd-crumb]").textContent = p.name;
+  if($("[data-pd-origin]")) $("[data-pd-origin]").textContent = p.origin;
+  if($("[data-pd-desc]"))   $("[data-pd-desc]").textContent = p.desc;
+  document.title = p.name + "｜霧森製茶所";
+  // 主圖 + 縮圖第一張
+  var main = $("[data-pd-main]"); if(main){ main.src = p.img; main.alt = p.name; }
+  var thumbs = document.querySelectorAll("[data-pd-thumbs] button");
+  if(thumbs[0]){ thumbs[0].setAttribute("data-full", p.img); var ti=thumbs[0].querySelector("img"); if(ti) ti.src = p.img; }
+  // 風味標籤
+  var fl = $("[data-pd-flavor]");
+  if(fl){ fl.innerHTML = p.flavor.map(function(t){ return "<span>"+t+"</span>"; }).join(""); }
+  // 規格 chips（第一個 active），並同步價格顯示
+  var chips = $("[data-pd-chips]");
+  if(chips){
+    // 預設選「標準」規格（第二個；不足兩個則第一個），與原頁面一致。
+    var activeIdx = p.specs.length > 1 ? 1 : 0;
+    chips.innerHTML = p.specs.map(function(s,i){
+      return '<button class="chip'+(i===activeIdx?" active":"")+'" data-price="'+s[1]+'">'+s[0]+'</button>';
+    }).join("");
+    var out = $("[data-price-out]"); if(out) out.textContent = p.specs[activeIdx][1];
+  }
+})();
+</script>
 <script src="assets/main.js?v=2"></script>
 </body>
 </html>
