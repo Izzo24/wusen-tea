@@ -398,6 +398,8 @@ section{position:relative}
 .co-done-ic{width:64px; height:64px; border-radius:50%; background:var(--tea); color:var(--gold-soft);
   display:grid; place-items:center; margin:0 auto 1.4rem}
 .co-done-ic svg{width:30px; height:30px}
+/* 完成畫面的兩顆按鈕：置中並拉開間距（通用 .cta 無 gap，會緊貼）。 */
+.co-done .cta{display:flex; justify-content:center; gap:1rem; flex-wrap:wrap}
 
 /* ---------- account / auth ---------- */
 .auth-wrap{max-width:460px; margin:2.5rem auto 0}
