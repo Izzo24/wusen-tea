@@ -287,8 +287,8 @@ section{position:relative}
 .form-note{font-size:.8rem; color:var(--ink-mute); margin-top:.4rem}
 .toast{position:fixed; left:50%; bottom:28px; transform:translateX(-50%) translateY(140%);
   background:var(--tea); color:#EFE7D5; padding:.9em 1.5em; border-radius:999px; box-shadow:var(--shadow);
-  z-index:120; transition:transform .45s cubic-bezier(.2,.8,.2,1); font-size:.92rem; display:flex; gap:.6em; align-items:center}
-.toast.show{transform:translateX(-50%) translateY(0)}
+  z-index:120; transition:transform .45s cubic-bezier(.2,.8,.2,1); font-size:.92rem; display:flex; gap:.6em; align-items:center;visibility:hidden;opacity:0}
+.toast.show{transform:translateX(-50%) translateY(0);visibility:visible;opacity:1}
 .toast svg{width:18px; height:18px; color:var(--gold-2)}
 
 /* ---------- footer ---------- */
